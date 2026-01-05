@@ -1,4 +1,3 @@
-
 const toggleButton = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 const currentTheme = localStorage.getItem('theme');
@@ -88,7 +87,9 @@ if (filterBtns.length > 0) {
             const filterValue = btn.getAttribute('data-filter');
 
             projectItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                const categories = item.getAttribute('data-category');
+                
+                if (filterValue === 'all' || categories.includes(filterValue)) {
                     item.classList.remove('hide');
                     item.classList.add('show');
                 }
