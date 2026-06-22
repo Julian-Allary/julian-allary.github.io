@@ -4,354 +4,1989 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./assets/images/logo.png">
-    <title>Portfolio | Julian Allary</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Allary Julian | Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <a href="#" class="to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 15l-6-6-6 6" />
-        </svg>
-    </a>
-    <div class="scroll-progress"></div>
-    <div class="ambient-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+    <div id="loader">
+        <div class="loader"></div>
     </div>
-    <header>
-        <nav>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <a href="#welcome" class="brand">Julian Allary.</a>
-            <div class="nav-right">
+
+    <div id="content" style="display: none;">
+        <header>
+            <nav>
+                <div class="logo">Julian Allary.</div>
                 <ul class="nav-links">
-                    <li><a href="#welcome">Accueil</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#expertise">Mon Domaine</a></li>
-                    <li><a href="#portfolio">Projets / Compétences</a></li>
-                    <li><a href="#lab">Mon Home Lab</a></li>
+                    <li><a href="#about" data-i18n="nav_about">À propos</a></li>
+                    <li><a href="#formation" data-i18n="nav_education">Formation</a></li>
+                    <li><a href="#competences">Compétences & AC</a></li>
+                    <li><a href="#projets">Projets Persos</a></li>
+                    <li><a href="#cv">Mon CV</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="./assets/cv.pdf" target="_blank" class="cta-cv">Mon CV</a></li>
                 </ul>
-                <button id="theme-toggle" aria-label="Changer de thème" class="theme-btn">
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="welcome" id="welcome">
-            <div class="welcome-content">
-                <p class="welcome-subtitle">Bienvenue sur mon portfolio</p>
-                <h1>
-                    Actuellement étudiant en <br>
-                    <em>réseaux</em> et <em>télécoms</em>,<br>
-                    parcours <em>cybersécurité</em>,<br>
-                    en <em>troisième</em> année.
+
+                <div class="custom-select">
+                    <div class="select-selected" id="current-lang">
+                        <img src="https://flagcdn.com/w20/fr.png" alt="FR"> FR
+                    </div>
+                    <div class="select-items select-hide" id="lang-options">
+                        <div data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> FR</div>
+                        <div data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> EN</div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section id="about" class="hero">
+            <div class="container text-left">
+                <p class="tagline slide-up" data-i18n="hero_tagline">Bienvenue sur mon portfolio</p>
+
+                <h1 class="hero-title fade-in" data-i18n="hero_title">
+                    Actuellement étudiant en <span>réseaux</span> et <span>télécoms</span>, parcours
+                    <span>cybersécurité</span>, en <span>troisième</span> année.
                 </h1>
-                <p class="welcome-description">
-                    Étant un grand passionné d'informatique.
-                    Mon rêve, depuis que je suis petit, est de travailler en
-                    cybersécurité. C'est pourquoi, je suis plus que motivé et je
-                    donnerai tout pour atteindre mon rêve.
+
+                <p class="description fade-in delay-1s" data-i18n="hero_description">
+                    Étant un grand passionné d'informatique. Mon rêve, depuis que je suis petit, est de travailler en
+                    cybersécurité. C'est pourquoi, je suis plus que motivé et je donnerai tout pour atteindre mon rêve.
                 </p>
-                <div class="welcome-buttons">
-                    <a href="#portfolio" class="btn btn-primary">Voir mes projets</a>
-                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
-                </div>
+                <p class="description fade-in delay-1s">
+                    Mon parcours a commencé par une simple curiosité pour le fonctionnement d'Internet, qui s'est vite
+                    transformée en véritable vocation.
+                </p>
+                <p class="description fade-in delay-1s">
+                    Aujourd'hui étudiant en BAC+3, je me spécialise dans l'architecture des réseaux et la sécurité des
+                    systèmes d'information. Je suis particulièrement intéressé par le Pentesting et la sécurisation des
+                    infrastructures critiques.
+                </p>
+                <p class="description fade-in delay-1s">
+                    Mon objectif ? Devenir un expert capable d'anticiper les menaces numériques de demain.
+                </p>
+                <a href="#competences" class="btn scale-hover fade-in delay-2s" data-i18n="hero_button">Voir mes
+                    compétences</a>
             </div>
         </section>
-        <section id="about" class="about-section">
-            <div class="about-container">
-                <div class="about-image">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/cybersecurity.jpg" alt="Cybersécurité">
+
+        <section id="formation" class="section-padding dark-bg hidden-on-load">
+            <div class="container">
+                <h2 data-i18n="title_education">Présentation de ma formation</h2>
+                <div class="grid-2">
+                    <div class="card fade-in">
+                        <h3 data-i18n="title_bachelor">BUT Réseaux et Télécoms, parcours Cybersécurité</h3>
+                        <p data-i18n="description_bachelor">Le Bachelor Universitaire de Technologie est une formation
+                            professionnalisante sur 3 ans. Il
+                            s'articule autour de l'acquisition de compétences validées par des projets concrets et des
+                            apprentissages critiques.</p>
                     </div>
-                </div>
-                <div class="about-text">
-                    <h2 class="section-title" style="margin-bottom: 30px;">À propos de moi</h2>
-                    <p>
-                        Mon parcours a commencé par une simple curiosité pour le fonctionnement d'Internet, qui s'est
-                        vite transformée en véritable vocation.
-                    </p>
-                    <p>
-                        Aujourd'hui étudiant en <strong>BAC+3</strong>, je me spécialise dans l'architecture des
-                        réseaux et la sécurité des systèmes d'information. Je suis particulièrement intéressé par le
-                        <strong>Pentesting</strong> et la <strong>sécurisation des infrastructures critiques</strong>.
-                    </p>
-                    <p>
-                        Mon objectif ? Devenir un expert capable d'anticiper les menaces numériques de demain.
-                    </p>
-                    <ul class="skills-list">
-                        <li>Curiosité</li>
-                        <li>Résolution de problèmes</li>
-                        <li>Travail d'équipe</li>
-                        <li>Rigueur</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-date">2020</span>
-                    <div class="timeline-content">
-                        <h3>Stage Apprentissage C++</h3>
-                        <p>Cours en visioconférence</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2021</span>
-                    <div class="timeline-content">
-                        <h3>Stage Découverte des métiers en informatique</h3>
-                        <p>Constellation, Lille, France</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2023</span>
-                    <div class="timeline-content">
-                        <h3>BUT R&T parcours CYBER</h3>
-                        <p>Institut Universitaire de Technologie, Béthune, France</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2025</span>
-                    <div class="timeline-content">
-                        <h3>Stage Administrateur Systèmes et Réseau</h3>
-                        <p>Communauté d'Agglomération Béhune-Bruay Artois Lys Romane, Béthune, France</p>
+                    <div class="card accent-card fade-in delay-1s">
+                        <h3 data-i18n="title_master">Mastère (MSc) Expert Cybersécurité Défensive / Offensive</h3>
+                        <p data-i18n="description_master">Dans la continuité de mon BUT, je vais intégrer un Mastère
+                            spécialisé en Cybersécurité pour
+                            approfondir mon expertise actuelle. Pour ce faire, je suis actuellement à la recherche d'une
+                            alternance.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="expertise" class="expertise-section">
-            <div class="expertise-header">
-                <h2 class="section-title">Mon Domaine d'Étude</h2>
-                <p class="section-subtitle">Comprendre l'écosystème numérique pour mieux le protéger.</p>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                            stroke="var(--accent-color)" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                        </svg>
-                    </div>
-                    <h3>Réseaux</h3>
-                    <p>
-                        L'art de connecter les machines entre elles. Je conçois et administre des architectures (LAN,
-                        WAN) pour assurer un échange de données fluide, rapide et stable.
-                    </p>
-                </div>
-                <div class="expertise-card">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                            stroke="var(--accent-color)" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                            <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                        </svg>
-                    </div>
-                    <h3>Télécommunications</h3>
-                    <p>
-                        La transmission de l'information à distance. Cela englobe la fibre optique, la 5G et les
-                        protocoles de transmission qui relient le monde physique au numérique.
-                    </p>
-                </div>
-                <div class="expertise-card highlight">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                            stroke="var(--accent-color)" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                    </div>
-                    <h3>Cybersécurité</h3>
-                    <p>
-                        Mon cœur de métier. Il s'agit de protéger l'intégrité, la confidentialité et la disponibilité
-                        des données contre les attaques malveillantes et les failles systèmes.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio" class="portfolio-section">
-            <h2 class="section-title">Mes projets professionnels</h2>
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="administer">Administrer</button>
-                <button class="filter-btn" data-filter="connect">Connecter</button>
-                <button class="filter-btn" data-filter="program">Programmer</button>
-                <button class="filter-btn" data-filter="secure">Sécuriser</button>
-                <button class="filter-btn" data-filter="monitor">Surveiller</button>
-            </div>
-            <div class="project-grid">
-                <a href="./projects/projet-r-501/" class="project-card-link" data-category="secure monitor">
-                    <article class="project-card">
-                        <img class="card-image" src="assets/images/projects/projet-r-501/wifi_avancé.jpg"
-                            alt="WiFi avancé"></img>
-                        <div class="card-info">
-                            <div class="card-header">
-                                <h3>WiFi avancé</h3>
-                            </div>
-                            <p>R5.01</p>
-                            <div class="ac-tags">
-                                <span class="ac-tag">AC31.03</span>
-                                <span class="ac-tag">AC32.02</span>
-                            </div>
-                            <div class="project-tags">
-                                <span>PfSense</span>
-                                <span>WiFi 6</span>
-                                <span>802.1X</span>
+        <section id="competences" class="section-padding hidden-on-load">
+            <div class="container">
+                <h2>Mes compétences par formation</h2>
+                <p class="subtitle">Validation des apprentissages critiques (AC) du BUT</p>
+                <div class="competence-bloc glowing-border">
+                    <h3>Compétence 1 : ADMINISTRER</h3>
+                    <details class="ac-item">
+                        <summary>AC 31.01 : Concevoir un projet de réseau informatique d'une entreprise en intégrant les
+                            problématiques de haute disponibilité, de QoS, de sécurité et de supervision</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "POC WiFi"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Conception architecturale et réalisation d'un Proof of Concept (POC) pour le
+                                            déploiement d'une nouvelle infrastructure Wi-Fi d'entreprise centralisée. Ce
+                                            projet a été mené dans le cadre du module R5.01 - WiFi Avancé, en simulant
+                                            la réponse à un appel d'offres sous de fortes contraintes budgétaires et
+                                            matérielles.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Équipements réseaux hétérogènes : Points d'accès Cisco Catalyst
+                                                (9120AXI-E et 9130AXI-E), commutateur PoE, et un contrôleur Wi-Fi (WLC)
+                                                pour la supervision centralisée.
+                                            </li>
+                                            <li>Outils d'étude de couverture (QoS/Haute disponibilité) : Logiciel Ekahau
+                                                et boîtier Sidekick.</li>
+                                            <li>Console d'administration (Minicom) pour la configuration des VLANs et du
+                                                routage.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal était de concevoir une architecture technique complète
+                                            et évolutive, capable de répondre aux exigences d'une entreprise moderne
+                                            tout en minimisant les coûts d'investissement.</p>
+                                        <p>Les sous-objectifs liés aux problématiques de l'AC étaient :</p>
+                                        <ul>
+                                            <li>Sécurité : Isoler les flux en segmentant le réseau LAN et configurer des
+                                                accès spécifiques (SSID IoT en PSK, SSID Invité via portail captif, et
+                                                préparation d'un SSID sécurisé en 802.1X/WPA2-Entreprise).</li>
+                                            <li>Supervision et Haute disponibilité : Mettre en place un contrôleur Wi-Fi
+                                                (WLC) pour administrer les bornes de manière centralisée.</li>
+                                            <li>QoS (Qualité de Service) : Réaliser un audit radio (site survey) pour
+                                                optimiser le positionnement des bornes et adapter le paramétrage radio à
+                                                une forte densité de terminaux récents.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce projet de conception m'a permis de comprendre qu'un bon réseau
+                                            d'entreprise est avant tout un réseau bien pensé en amont. La contrainte
+                                            d'utiliser du matériel hétérogène de différentes générations m'a obligé à
+                                            être stratégique dans mes choix d'architecture.</p>
+                                        <p>Pour répondre aux enjeux de sécurité, j'ai conçu un plan d'adressage strict
+                                            basé sur des VLANs dédiés (VLAN 10 Management, VLAN 20 IoT, VLAN 30 GUEST).
+                                            Concernant la QoS et la haute disponibilité, l'utilisation d'Ekahau pour
+                                            l'audit radio m'a fait réaliser que la performance d'un réseau sans fil
+                                            dépend de l'anticipation des interférences et des obstacles physiques.
+                                            Enfin, l'intégration d'un contrôleur WLC m'a prouvé que la supervision
+                                            centralisée est indispensable : face aux problèmes techniques rencontrés
+                                            avec certains points d'accès (AP) durant le TP, la capacité à gérer
+                                            l'infrastructure depuis un point central a été vitale pour le diagnostic et
+                                            le dépannage.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>La conception de ce POC valide pleinement l'AC 31.01. J'ai démontré ma
+                                            capacité à concevoir l'architecture d'un réseau d'entreprise de bout en
+                                            bout, en intégrant nativement les contraintes de sécurité (cloisonnement,
+                                            authentification forte), de performance (haute densité, audit radio) et
+                                            d'administration (contrôleur centralisé). Ce projet prouve que je suis
+                                            capable de proposer des solutions réseaux résilientes et optimisées, même
+                                            dans des contextes budgétaires et matériels complexes.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </article>
-                </a>
-            </div>
-        </section>
-        <section id="lab" class="lab-section">
-            <div class="lab-container">
-                <h2 class="section-title">Mon Home Lab</h2>
-                <p class="section-subtitle">Mes projets personnels au cours de ces dernières années.</p>
-                <div class="lab-grid">
-                    <div class="lab-card">
-                        <div class="lab-header">
-                            <span class="lab-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                    fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                                </svg>
-                            </span>
-                            <div class="lab-status" title="Système en ligne"></div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 31.02 : Réaliser la documentation technique de ce projet</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Élaboration de la documentation technique, stratégique et opérationnelle lors
+                                            de mon stage de fin d'études au sein de la PME RIOU SOLUTIONS, incluant un
+                                            rapport d'audit de sécurité complet et des procédures de migration
+                                            d'infrastructure.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Traces et captures d'analyse réseau (fichiers PCAP via Wireshark) et
+                                                configurations extraites du pare-feu périmétrique.
+                                            </li>
+                                            <li>Conception d'une Matrice des Risques pour classifier les vulnérabilités
+                                                identifiées.</li>
+                                            <li>Documentation technique des fournisseurs (OVHcloud Mail Migrator,
+                                                spécifications DNS) pour rédiger les protocoles de migration de la
+                                                messagerie.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif de cette démarche était de laisser une trace écrite rigoureuse,
+                                            compréhensible et exploitable de l'ensemble de mes interventions techniques
+                                            pour assurer la pérennité du système d'information de l'entreprise.</p>
+                                        <p>Les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Formaliser les résultats de l'audit de sécurité dans un document
+                                                structuré, traduisant des failles techniques complexes (défaut de
+                                                cloisonnement, adresses IP publiques en interne) en impacts métiers
+                                                clairs.</li>
+                                            <li>Produire un support d'aide à la décision pour la direction en
+                                                hiérarchisant les urgences via une matrice des risques (de sévérité
+                                                "Modérée" à "Intolérable").</li>
+                                            <li>Rédiger une procédure technique pas-à-pas pour la migration asynchrone
+                                                de Microsoft Exchange vers Zimbra (incluant le rollback, la modification
+                                                des enregistrements MX/SRV/CNAME et la reconfiguration des terminaux).
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce stage m'a fait réaliser que la rédaction technique exige autant de rigueur
+                                            que la configuration d'un équipement. Rédiger le rapport d'audit m'a demandé
+                                            un véritable effort de vulgarisation et de structuration : il ne s'agissait
+                                            pas de faire une simple liste de bugs, mais d'expliquer la cause racine (par
+                                            exemple, l'absence de norme 802.1X) et d'argumenter la solution corrective
+                                            de manière professionnelle.</p>
+                                        <p>La création de la procédure de bascule pour la messagerie a également été un
+                                            excellent exercice. J'ai compris qu'une bonne documentation opérationnelle
+                                            doit être pensée pour qu'un autre technicien puisse reprendre le projet sans
+                                            difficulté. Détailler scrupuleusement chaque phase (de la sauvegarde des
+                                            fichiers .mbox/.pst jusqu'à la propagation DNS) m'a permis d'acquérir une
+                                            véritable méthodologie de travail. J'ai ainsi développé ma capacité à
+                                            adapter mon niveau de langage technique en fonction de la cible du document
+                                            (direction, équipe IT ou utilisateurs finaux).</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>La production des livrables de ce stage valide pleinement l'AC 31.02. J'ai
+                                            démontré ma capacité à concevoir et rédiger une documentation technique
+                                            exhaustive et structurée. Qu'il s'agisse de documenter une architecture
+                                            réseau, de formaliser des risques de cybersécurité ou d'écrire des
+                                            protocoles de migration, j'ai prouvé que je maîtrise les outils et les
+                                            méthodes nécessaires pour assurer la traçabilité et le transfert de
+                                            compétences au sein d'une organisation.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Serveur Web et Bot Discord</h4>
-                        <p>Serveur <strong>Apache</strong> pour héberger des sites web et un <strong>bot
-                                Discord</strong></p>
-                    </div>
-                    <div class="lab-card">
-                        <div class="lab-header">
-                            <span class="lab-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                    fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                </svg>
-                            </span>
-                            <div class="lab-status" title="Système en ligne"></div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 31.03 : Réaliser une maquette de démonstration du projet</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "TP 2 FortiGate"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Réalisation d'une maquette de démonstration pour le déploiement d'un réseau
+                                            sans fil d'entreprise sécurisé (WIFI 6 - 802.1X). Ce projet a été mené lors
+                                            du TP n°2 du module R5.01 - WiFi Avancé.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Un équipement central jouant le rôle de routeur, pare-feu et contrôleur
+                                                Wi-Fi : le Fortigate 81F.</li>
+                                            <li>Une infrastructure d'extension comprenant un point d'accès FortiAP et un
+                                                commutateur FortiSwitch POE. </li>
+                                            <li>Un serveur Windows configuré avec un rôle RADIUS pour la gestion
+                                                centralisée des utilisateurs et des certificats. </li>
+                                            <li>Une machine virtuelle (Ubuntu) pour l'administration et un téléphone
+                                                portable agissant comme client Wi-Fi pour les tests. </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de ce projet était de construire un environnement de
+                                            test fonctionnel prouvant la viabilité et la sécurité d'une architecture
+                                            sans fil avant un éventuel déploiement en production. </p>
+                                        <p>Les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Configurer le contrôleur réseau intégré au Fortigate pour diffuser de
+                                                multiples réseaux (SSID). </li>
+                                            <li>Mettre en place un premier SSID ouvert, restreint à un simple accès
+                                                Internet sans authentification. </li>
+                                            <li>Déployer un second SSID sécurisé pour le réseau local, conditionné par
+                                                une authentification forte via le protocole 802.1X couplé au serveur
+                                                Windows. </li>
+                                            <li>Prouver la scalabilité de l'infrastructure en intégrant un point d'accès
+                                                supplémentaire (FortiAP) pour étendre la couverture radio. </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>La création de cette maquette a été une étape déterminante pour comprendre
+                                            l'intégration de différents services réseau. L'un des défis majeurs a été la
+                                            configuration du serveur Windows en tant que serveur RADIUS pour le domaine
+                                            local. J'ai appris qu'une maquette ne se limite pas à allumer une borne
+                                            Wi-Fi ; il faut gérer l'infrastructure sous-jacente, notamment la gestion
+                                            des certificats, pour que le serveur soit correctement reconnu par le
+                                            Fortigate et autorise l'authentification 802.1X. </p>
+                                        <p>De plus, l'ajout du FortiAP via le FortiSwitch POE dans un second temps m'a
+                                            permis de simuler une évolution réaliste de la maquette. J'ai pu constater
+                                            concrètement comment le contrôleur centralise la gestion des bornes
+                                            supplémentaires. L'utilisation de mon propre téléphone portable pour valider
+                                            la connexion aux différents SSID a été la preuve par l'exemple que le
+                                            routage, les règles de pare-feu et l'authentification de ma démonstration
+                                            étaient pleinement opérationnels. </p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>La réalisation de ce TP valide avec succès l'AC 31.03. J'ai démontré ma
+                                            capacité à concevoir, configurer et tester une maquette de démonstration
+                                            complète intégrant des équipements physiques (Fortigate, FortiSwitch,
+                                            FortiAP) et des services logiques (Serveur RADIUS, 802.1X). Ce prototypage
+                                            prouve mon aptitude à valider techniquement une solution complexe et
+                                            sécurisée afin de garantir son bon fonctionnement avant un déploiement
+                                            grandeur nature en entreprise. </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4>AdGuard et Sécurisation</h4>
-                        <p>Blocage de <strong>publicités</strong> et <strong>liens malveillants</strong> via un filtrage
-                            DNS</p>
-                    </div>
-                    <div class="lab-card">
-                        <div class="lab-header">
-                            <span class="lab-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                    fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                                </svg>
-                            </span>
-                            <div class="lab-status" title="Système en ligne"></div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 31.04 : Défendre/argumenter un projet</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Restitution de l'audit de sécurité et soutenance des choix architecturaux
+                                            pour le projet de Cloud interne auprès de la direction de la PME RIOU
+                                            SOLUTIONS.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Matrice des risques synthétisant les vulnérabilités par niveau de
+                                                sévérité et impact métier. </li>
+                                            <li>Analyse comparative documentée entre une solution de stockage
+                                                Open-Source (Nextcloud) et une solution propriétaire (Synology).</li>
+                                            <li>Étude de dimensionnement matériel et budgétaire (gamme Synology DS/RS).
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif de cette démarche était de convaincre la direction de la nécessité
+                                            d'investir du temps et du budget pour moderniser et sécuriser son
+                                            infrastructure, en justifiant chaque recommandation technique par des
+                                            arguments pragmatiques.</p>
+                                        <p>Les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Traduire des failles de sécurité complexes (ex: absence de norme 802.1X,
+                                                défaut d'étanchéité des VLANs) en risques métiers concrets (vols de
+                                                données, propagation de ransomwares) pour déclencher une prise de
+                                                conscience.</li>
+                                            <li>Argumenter le refus d'utiliser le NAS de sauvegarde existant (QNAP) pour
+                                                le nouveau projet de Cloud, en défendant le principe de séparation des
+                                                environnements.</li>
+                                            <li>Défendre le choix d'une solution payante face à une solution gratuite en
+                                                démontrant le coût caché de la maintenance (MCO).</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce stage m'a appris qu'avoir la meilleure solution technique sur le papier ne
+                                            sert à rien si l'on n'est pas capable de la vendre à sa direction.
+                                            L'utilisation de la matrice des risques a été mon meilleur outil
+                                            d'argumentation : en classant la vulnérabilité liée au mauvais cloisonnement
+                                            des réseaux comme "Intolérable", j'ai pu justifier l'urgence de revoir les
+                                            règles du pare-feu et de planifier le déploiement de VLANs.</p>
+                                        <p>L'exercice le plus exigeant a été la soutenance du projet de Cloud interne.
+                                            J'ai dû faire preuve d'objectivité. Bien que la solution Nextcloud
+                                            (open-source et gratuite) soit techniquement très intéressante, j'ai
+                                            argumenté contre son déploiement. J'ai défendu l'acquisition d'un écosystème
+                                            Synology (plus coûteux à l'achat) en expliquant à la direction que la
+                                            gestion d'un serveur Linux/Docker exigerait un temps de maintenance humaine
+                                            et des compétences que la PME ne possédait pas en interne. Argumenter sur la
+                                            fiabilité, la simplicité de mise à jour par le constructeur et la sécurité à
+                                            long terme m'a permis de faire valider ce choix.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>La restitution de ces projets valide pleinement l'AC 31.04. J'ai démontré ma
+                                            capacité à défendre un projet informatique de sa conception à son adoption
+                                            par les décideurs. En m'appuyant sur des livrables professionnels (matrice
+                                            des risques, analyse comparative) et en adaptant mon discours pour
+                                            transformer des contraintes techniques en enjeux stratégiques et financiers,
+                                            j'ai prouvé mon aptitude à argumenter et convaincre dans un contexte
+                                            d'entreprise réel.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Serveur de stockage</h4>
-                        <p>Installation d'un serveur de <strong>stockage de données</strong></p>
-                    </div>
-                    <div class="lab-card">
-                        <div class="lab-header">
-                            <span class="lab-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                    fill="none" stroke="var(--accent-color)" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                                </svg>
-                            </span>
-                            <div class="lab-status" title="Système en ligne"></div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 31.05 : Communiquer avec les acteurs du projet</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Gestion de la communication multidirectionnelle (direction, utilisateurs
+                                            finaux, encadrement pédagogique et professionnel) tout au long des projets
+                                            d'audit de sécurité et de migration d'infrastructure au sein de la PME RIOU
+                                            SOLUTIONS.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Support de restitution formel (matrice des risques, rapports techniques)
+                                                destiné à la direction de l'entreprise.</li>
+                                            <li>Échanges et accompagnement technique direct auprès de la vingtaine de
+                                                collaborateurs de l'entreprise.</li>
+                                            <li>Points de synchronisation avec les acteurs encadrants : M. Desurier
+                                                (tuteur de stage en entreprise) et M. Morganti (enseignant référent).
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de cette compétence était de prouver ma capacité à
+                                            interagir efficacement avec des interlocuteurs aux profils très variés, en
+                                            adaptant mon niveau de discours et mon vocabulaire.</p>
+                                        <p>Les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Traduire des problématiques techniques complexes en enjeux clairs
+                                                (risques métiers, coûts) pour faciliter la prise de décision de la
+                                                direction.</li>
+                                            <li>Faire preuve de pédagogie et d'écoute pour accompagner les
+                                                collaborateurs lors des changements d'outils numériques (conduite du
+                                                changement).</li>
+                                            <li>Rendre compte de l'avancée de mes missions à mon tuteur de stage avec
+                                                rigueur et transparence.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Cette immersion en entreprise a été un véritable catalyseur pour développer
+                                            mes compétences humaines et managériales. J'ai rapidement compris que le
+                                            vocabulaire que j'utilise avec d'autres étudiants en cybersécurité ne
+                                            fonctionne pas avec des utilisateurs ou des dirigeants.</p>
+                                        <p>Lors de l'audit de sécurité, j'ai dû formaliser mes découvertes pour éclairer
+                                            les décisions de la direction : plutôt que de parler uniquement de
+                                            protocoles réseau comme le 802.1X ou de tempêtes de broadcast, j'ai qualifié
+                                            la sévérité des risques (de "modérée" à "intolérable") pour que les enjeux
+                                            soient immédiatement compréhensibles par des non-techniciens.</p>
+                                        <p>L'exercice le plus concret de communication a eu lieu lors de la phase 6 de
+                                            la migration vers Zimbra. Le changement d'infrastructure ayant brisé les
+                                            liaisons de messagerie sur les terminaux des collaborateurs, j'ai dû
+                                            intervenir sur chaque poste. Cette étape a exigé d'adapter mon langage
+                                            technique pour guider les utilisateurs sans les perdre, tout en les
+                                            rassurant sur la sécurité de leurs données. Cela a considérablement
+                                            développé mon sens de l'écoute, de la pédagogie et du service.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, ce stage valide pleinement l'AC 31.05. J'ai prouvé ma capacité
+                                            à communiquer avec l'ensemble des acteurs d'un projet technologique. Qu'il
+                                            s'agisse de défendre une architecture budgétisée auprès d'une direction, de
+                                            faire des points d'étape avec un tuteur professionnel, ou de vulgariser
+                                            l'informatique pour accompagner des utilisateurs finaux dans leurs
+                                            changements d'outils, j'ai démontré que la maîtrise de la communication est
+                                            le pilier central de la réussite d'un projet IT.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4>WiFi 5 GHz privé</h4>
-                        <p>Configuration d'un WiFi 5 GHz <strong>spécialement</strong> pour mon équipement de streaming
-                            d'écran à distance</p>
-                    </div>
-                    <div class="lab-card">
-                        <div class="lab-header">
-                            <span class="lab-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                                    fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z">
-                                    </path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <path d="m9 15 2 2 4-4"></path>
-                                </svg>
-                            </span>
-                            <div class="lab-status" title="Système en ligne"></div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 31.06 : Gérer le projet et les différentes étapes de sa mise en œuvre en respectant
+                            les délais</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Planification, pilotage et exécution des projets informatiques (audit de
+                                            sécurité, migration de la messagerie vers Zimbra, et étude Cloud) durant mon
+                                            stage de fin d'études au sein de l'entreprise RIOU SOLUTIONS, sur une
+                                            période délimitée (du 19 mars au 5 juin 2026).</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Découpage séquentiel du projet de migration en 6 phases opérationnelles.
+                                            </li>
+                                            <li>Outil de migration asynchrone (OVHcloud Mail Migrator) permettant de
+                                                paralléliser les tâches sans bloquer la production.</li>
+                                            <li>Matrice des risques utilisée comme outil de priorisation pour la gestion
+                                                des vulnérabilités.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal était de mener à bien l'ensemble des missions confiées
+                                            dans le délai imparti de mon stage, tout en garantissant une interruption de
+                                            service minimale (voire nulle) pour les collaborateurs de l'entreprise.</p>
+                                        <p>Les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Organiser et phaser les interventions critiques pour anticiper les
+                                                imprévus (planification de sauvegardes de précaution).</li>
+                                            <li>Adapter le calendrier d'exécution technique aux contraintes métiers de
+                                                la PME (gestion des fenêtres de maintenance).</li>
+                                            <li>Prioriser les actions de remédiation de sécurité en fonction de leur
+                                                niveau de sévérité pour optimiser le temps de travail.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce stage m'a prouvé que la réussite d'un projet informatique repose à 80% sur
+                                            sa préparation. Gérer le projet de migration de la messagerie a été
+                                            l'exercice de planification le plus complet. Au lieu d'improviser une
+                                            bascule brutale, j'ai rigoureusement séquencé l'opération en 6 phases. J'ai
+                                            anticipé les risques en imposant une Phase 1 de sécurisation (sauvegarde
+                                            locale .mbox/.pst) comme filet de sécurité (Rollback).</p>
+                                        <p>J'ai également compris comment optimiser les délais. L'utilisation de l'outil
+                                            OMM (Phases 2 et 3) m'a permis de réaliser une synchronisation asynchrone en
+                                            tâche de fond, permettant aux utilisateurs de continuer à travailler
+                                            normalement. Surtout, la gestion de projet m'a appris à respecter le rythme
+                                            de l'entreprise : j'ai stratégiquement planifié la Phase 4 (la bascule à
+                                            chaud et la libération de l'adresse source) durant une période de faible
+                                            trafic, en soirée ou en fin de semaine, afin de ne pas impacter l'activité
+                                            économique de RIOU SOLUTIONS. </p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, la conduite de ces missions valide totalement l'AC 31.06. J'ai
+                                            prouvé ma capacité à prendre en main un projet complexe de bout en bout, à
+                                            le structurer en étapes claires et à respecter des échéances strictes.
+                                            L'anticipation des risques, l'optimisation des temps de migration et la
+                                            programmation des interventions critiques en dehors des heures de production
+                                            démontrent mon aptitude à piloter un projet informatique avec
+                                            professionnalisme et méthode. </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Scripting</h4>
-                        <p>Création de <strong>scripts</strong> pour me simplifier la vie sur certaines tâches</p>
-                    </div>
+                    </details>
+                    <h3>Compétence 2 : CONNECTER</h3>
+                    <details class="ac-item">
+                        <summary>AC 32.01 : Déployer un système de communication pour l'entreprise</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Déploiement d'un nouveau système de communication via la migration de
+                                            l'infrastructure de messagerie (de Microsoft Exchange vers Zimbra sur
+                                            OVHcloud) pour l'entreprise RIOU SOLUTIONS.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Outil de synchronisation et de migration OVHcloud Mail Migrator (OMM).
+                                            </li>
+                                            <li>Interfaces d'administration des serveurs source (Exchange) et cible
+                                                (Zimbra).</li>
+                                            <li>Console de gestion de la zone DNS du nom de domaine (riou.solutions)
+                                                pour la reconfiguration de l'aiguillage.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de ce projet était de moderniser les services
+                                            collaboratifs de l'entreprise en déployant une nouvelle solution de
+                                            messagerie, tout en garantissant une continuité de service pour la vingtaine
+                                            de collaborateurs.</p>
+                                        <p>Pour réussir ce déploiement, les sous-objectifs techniques étaient les
+                                            suivants :</p>
+                                        <ul>
+                                            <li>Transférer l'intégralité des boîtes de réception (historique d'e-mails,
+                                                calendriers, contacts) sans aucune perte de données.</li>
+                                            <li>Concevoir une stratégie de migration asynchrone utilisant des comptes
+                                                pivots temporaires pour contourner le blocage technique empêchant
+                                                d'avoir la même adresse sur deux offres simultanément.</li>
+                                            <li>Opérer la bascule réseau à chaud en reconfigurant les enregistrements de
+                                                la zone DNS (MX, SRV, CNAME) pour rediriger les flux mondiaux vers la
+                                                nouvelle infrastructure.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce projet de migration m'a appris qu'un déploiement de système de
+                                            communication à l'échelle d'une entreprise ne laisse pas de place à
+                                            l'improvisation. J'ai compris l'importance de la planification par phases :
+                                            la sécurisation préalable des données avec des archives .mbox/.pst a
+                                            constitué mon filet de sécurité. De plus, l'utilisation de l'outil OMM pour
+                                            synchroniser les données en tâche de fond (en asynchrone) m'a prouvé qu'il
+                                            était possible de préparer une infrastructure cible sans impacter la
+                                            production en cours.</p>
+                                        <p>L'étape la plus critique et la plus formatrice a été la reconfiguration de la
+                                            zone DNS. J'ai dû manipuler les enregistrements MX pour le routage des
+                                            e-mails et nettoyer les paramètres d'auto-configuration (SRV/CNAME) de
+                                            l'ancien environnement Exchange. Cela m'a fait prendre conscience de la
+                                            responsabilité technique liée au déploiement : une simple erreur DNS aurait
+                                            pu couper les communications de toute l'entreprise.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>La réussite totale de ce projet valide pleinement l'AC 32.01. J'ai démontré
+                                            ma capacité à concevoir, planifier et exécuter le déploiement d'un système
+                                            de communication d'entreprise de bout en bout. De la stratégie de copie
+                                            asynchrone à la manipulation complexe des tables DNS, jusqu'à
+                                            l'accompagnement final des utilisateurs pour la reconfiguration de leurs
+                                            terminaux, j'ai prouvé mes compétences en ingénierie des services et ma
+                                            maîtrise des infrastructures collaboratives.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 32.02 : Déployer un réseau d'accès sans fil pour le réseau d'entreprise en intégrant
+                            les enjeux de la sécurité</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "WiFi Avancé"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Conception technique et réalisation d'un Proof of Concept (POC) pour le
+                                            déploiement d'une infrastructure Wi-Fi d'entreprise centralisée. Ce projet,
+                                            réalisé dans le cadre du module R5.01 - WiFi Avancé, simulait une réponse à
+                                            un appel d'offres pour un client ayant de fortes contraintes budgétaires
+                                            nécessitant d'utiliser du matériel hétérogène.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Infrastructure réseau : Points d'accès Cisco Catalyst (modèles 9130AXI-E
+                                                et 9120AXI-E), un commutateur PoE, et un contrôleur Wi-Fi (WLC).</li>
+                                            <li>Outils d'audit radio : Logiciel Ekahau couplé au boîtier Sidekick pour
+                                                la réalisation du site survey.</li>
+                                            <li>Logiciels d'administration : Interfaces en ligne de commande (CLI) via
+                                                Minicom pour la configuration des équipements réseaux.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal était de démontrer la viabilité d'une architecture
+                                            sans-fil répondant à des besoins précis en matière de couverture radio,
+                                            d'évolutivité et surtout de sécurité.</p>
+                                        <p>Pour valider ce POC, plusieurs sous-objectifs techniques ont été définis :
+                                        </p>
+                                        <ul>
+                                            <li>Concevoir l'architecture et assurer la sécurisation du LAN via la
+                                                segmentation des flux (création des VLANs 10 Management, 20 IoT et 30
+                                                GUEST).</li>
+                                            <li>Préparer et configurer différents SSID isolés : un réseau IoT avec
+                                                authentification PSK, un réseau Invité avec portail captif local, et
+                                                anticiper un SSID hautement sécurisé (802.1X / WPA2-Entreprise).</li>
+                                            <li>Réaliser un audit radio (site survey simplifié) de la zone pour évaluer
+                                                la couverture, anticiper les interférences et optimiser le placement des
+                                                bornes haute densité.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce TP a été extrêmement riche en enseignements car il a confronté la théorie
+                                            des réseaux sans fil à la réalité physique et matérielle. L'utilisation
+                                            d'Ekahau et du Sidekick pour l'audit radio m'a fait prendre conscience de
+                                            l'impact crucial de l'environnement physique (matériaux, obstacles) sur la
+                                            propagation des ondes et la qualité du signal. J'ai compris que déployer du
+                                            Wi-Fi ne se limite pas à brancher une borne, mais exige une planification
+                                            minutieuse.</p>
+                                        <p>Par ailleurs, la réalisation technique a été marquée par de nombreux
+                                            dysfonctionnements liés aux points d'accès (AP) et aux contraintes de
+                                            matériels hétérogènes imposées par le scénario budgétaire. Ces problèmes
+                                            matériels ont considérablement freiné notre avancement sur la configuration
+                                            finale. Cependant, avec du recul, ces obstacles ont été très formateurs.
+                                            Devoir passer par la CLI pour forcer la reconfiguration d'une borne (par
+                                            exemple via les commandes ap-type capwap) m'a exercé au troubleshooting
+                                            avancé. Cela m'a appris que le déploiement d'une infrastructure réseau
+                                            nécessite une forte résilience face aux pannes matérielles et une maîtrise
+                                            parfaite des fondations réseau sous-jacentes (routage, DHCP, configuration
+                                            des ports switch en mode access pour les VLANs).</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, malgré les difficultés techniques rencontrées avec les
+                                            équipements matériels, ce POC m'a permis de valider les compétences de l'AC
+                                            32.02. J'ai pu concevoir de bout en bout une architecture Wi-Fi
+                                            d'entreprise, modéliser les besoins de couverture radio grâce à des outils
+                                            professionnels de site survey, et comprendre l'importance vitale de la
+                                            sécurité et du cloisonnement (VLAN, portails captifs, PSK/802.1X) dans un
+                                            déploiement sans fil. Cette expérience renforce ma capacité à auditer,
+                                            proposer et déployer des solutions réseaux complexes et sécurisées, même
+                                            dans des environnements technologiquement contraints.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 32.03 : Déployer un réseau d'accès fixe ou mobile pour un opérateur de
+                            télécommunications en intégrant la sécurité</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Etude de cas Fibre"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Étude d'implantation d'une infrastructure très haut débit (FiberLux)
+                                            dans la commune de Locon, conçue comme un backbone indispensable pour
+                                            supporter le déploiement futur d'un réseau sans fil municipal sécurisé
+                                            (Extension Wi-Fi publique, domotique locale, "Smart Village"). Projet
+                                            réalisé dans le cadre du module R5.06 (Expression, Culture, Communication
+                                            professionnelles).</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Étude de marché locale analysant les faiblesses actuelles (couverture
+                                                ADSL partielle) et les opportunités de croissance.</li>
+                                            <li>Conception de l'architecture de raccordement (NRO, SRO, PBO, PM)
+                                                optimisée via Google Maps.</li>
+                                            <li>Élaboration d'une stratégie de développement ("Future Évolution")
+                                                intégrant les services sans fil et connectés.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif initial était de concevoir l'implantation de la fibre optique pour
+                                            désenclaver la commune, mais l'enjeu sous-jacent (lié à cet Apprentissage
+                                            Critique) était de dimensionner cette infrastructure physique pour qu'elle
+                                            puisse accueillir et sécuriser un réseau d'accès sans fil à l'échelle du
+                                            village.</p>
+                                        <p>Pour cela, les sous-objectifs étaient :</p>
+                                        <ul>
+                                            <li>Concevoir une ossature filaire (FTTH) capable d'encaisser la charge et
+                                                la haute densité requises par de futures bornes Wi-Fi publiques et des
+                                                réseaux IoT (Internet des Objets).</li>
+                                            <li>Anticiper l'intégration de services sans fil critiques (déploiement
+                                                domotique local, services connectés de santé pour les seniors).</li>
+                                            <li>Intégrer les enjeux de sécurité induits par le concept de "Locon Commune
+                                                Intelligente" : garantir que le réseau d'accès qui alimentera ces
+                                                capteurs et ces bornes soit hautement disponible et cloisonné.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce projet de communication professionnelle m'a obligé à prendre de la hauteur
+                                            sur la conception des réseaux d'accès. J'ai pris conscience qu'on ne déploie
+                                            pas un réseau sans fil (Wi-Fi ou IoT) à grande échelle à partir de rien : la
+                                            performance et la sécurité d'une "Extension Wi-Fi" dépendent intégralement
+                                            de la robustesse de l'infrastructure filaire en amont (le backbone fibré).
+                                        </p>
+                                        <p>Penser l'évolution de notre FAI fictif "FiberLux" vers le support d'une
+                                            "Commune Intelligente" m'a fait toucher du doigt les problématiques de
+                                            sécurité urbaine. Déployer du sans-fil pour relier des services connectés
+                                            dédiés aux seniors ou à la domotique locale exige une réflexion
+                                            architecturale rigoureuse. Il faut s'assurer que le raccordement depuis le
+                                            Point de Mutualisation (PM) jusqu'aux émetteurs sans fil soit étanche, afin
+                                            d'éviter qu'une faille sur un réseau Wi-Fi public ne compromette les données
+                                            des habitants ou les services vitaux de la commune.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, bien que ce projet soit techniquement centré sur la fibre, il
+                                            démontre ma capacité à concevoir l'écosystème global nécessaire au
+                                            déploiement d'un réseau sans fil sécurisé. Modéliser l'architecture de
+                                            Locon, de l'étude de marché jusqu'au traçage du réseau civil, constitue le
+                                            prérequis absolu pour permettre l'implantation future de bornes Wi-Fi et de
+                                            services domotiques. Cette approche globale valide ma compréhension des
+                                            interdépendances entre les supports physiques et les réseaux sans fil
+                                            d'accès dans un environnement connecté sécurisé.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 32.04 : Permettre aux collaborateurs de se connecter de manière sécurisée au système
+                            d'information de l'entreprise</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "pfSense"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Mise en œuvre d'un portail captif via la solution pfSense pour sécuriser et
+                                            contrôler l'accès aux ressources réseaux d'une infrastructure. Ce projet a
+                                            été réalisé dans le cadre du module R5.01 WiFi avancé.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <p>L'infrastructure a été déployée dans un environnement virtualisé comprenant :
+                                        </p>
+                                        <ul>
+                                            <li>Une machine virtuelle pfSense configurée comme passerelle avec deux
+                                                cartes réseaux distinctes (une WAN et une LAN).</li>
+                                            <li>Un serveur Windows centralisant les identités.</li>
+                                            <li>Une machine virtuelle dédiée à l'administration pour configurer les
+                                                services du portail.</li>
+                                            <li>Une machine cliente utilisée pour vérifier le blocage et tester
+                                                l'authentification.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de ce TP était de mettre en place un sas de sécurité
+                                            réseau capable de bloquer les flux par défaut et de rediriger les
+                                            collaborateurs vers une page d'authentification Web avant de leur accorder
+                                            l'accès.</p>
+                                        <p>Les sous-objectifs techniques permettant d'atteindre ce résultat étaient :
+                                        </p>
+                                        <ul>
+                                            <li>Configurer les paramètres réseau de base du pare-feu pfSense via son
+                                                portail d'administration.</li>
+                                            <li>Ajouter et configurer le service de portail captif en validant d'abord
+                                                son bon fonctionnement avec des utilisateurs créés localement.</li>
+                                            <li>Faire évoluer le système en modifiant la configuration afin de déléguer
+                                                l'authentification aux utilisateurs définis de manière centralisée sur
+                                                le Windows Server.</li>
+                                            <li>Personnaliser la page d'accueil d'authentification pour guider
+                                                l'utilisateur.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Déployer ce portail captif a été une excellente mise en situation pour
+                                            comprendre les mécanismes de contrôle d'accès au système d'information. La
+                                            configuration initiale des interfaces WAN et LAN m'a rappelé que la sécurité
+                                            commence par un cloisonnement physique ou logique strict.</p>
+                                        <p>L'étape la plus formatrice a été la transition entre les deux modes
+                                            d'authentification. Tester le portail avec des utilisateurs définis
+                                            localement sur pfSense était utile pour valider le concept de base.
+                                            Cependant, j'ai rapidement pris conscience qu'en entreprise, gérer des
+                                            comptes locaux n'est ni scalable ni sécurisé. La modification du portail
+                                            pour qu'il prenne en compte les comptes déclarés sur le Windows Server m'a
+                                            permis d'appréhender les vrais enjeux professionnels : offrir aux
+                                            collaborateurs un accès sécurisé utilisant leurs identifiants d'entreprise
+                                            uniques. Enfin, la personnalisation de la page d'accueil m'a sensibilisé à
+                                            l'importance de l'ergonomie : une connexion sécurisée doit aussi être
+                                            transparente et claire pour le collaborateur.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>Ce projet pfSense valide concrètement l'AC 32.04. J'ai prouvé ma capacité à
+                                            déployer une barrière de sécurité réseau forçant une authentification Web
+                                            préalable à toute navigation. En couplant ce portail captif à un annuaire
+                                            centralisé (Windows Server), j'ai démontré que je suis capable de fournir
+                                            aux collaborateurs un moyen de connexion robuste, tracé et sécurisé,
+                                            indispensable pour protéger l'intégrité du système d'information de
+                                            l'entreprise.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 32.05 : Collaborer en mode projet en francais et en anglais</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Food Truck"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Conception collaborative d'un Business Plan et d'une stratégie de
+                                            communication complète pour le lancement d'un concept de Food Truck fictif
+                                            nommé "Crêpes Movies" (thématique mêlant cinéma et restauration). Ce travail
+                                            en équipe a été réalisé dans le cadre du module R5.06 - Expression, Culture,
+                                            Communication professionnelles.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Outils de conception graphique et de maquettage (Canva, Publisher) pour
+                                                la réalisation des supports de communication.</li>
+                                            <li>Données d'études de marché (ex: rapports SumUp sur la rentabilité du
+                                                secteur).</li>
+                                            <li>Plateformes sociales (Instagram) et outils de prototypage d'applications
+                                                mobiles (intégration de systèmes Point of Sale comme PayPal POS).</li>
+                                            <li>Documents partagés pour la gestion de projet et la centralisation des
+                                                recherches.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de ce projet était de démontrer notre capacité à
+                                            collaborer efficacement en équipe pour construire un dossier professionnel
+                                            complet et cohérent, de l'étude de marché jusqu'à l'identité visuelle.</p>
+                                        <p>Pour répondre aux exigences de cet Apprentissage Critique (AC), les
+                                            sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Structurer le travail en attribuant des rôles précis à chaque membre de
+                                                l'équipe selon ses compétences (analyse de marché, identité visuelle,
+                                                communication externe, fidélisation). </li>
+                                            <li>Concevoir et formaliser, pour ma part, l'analyse stratégique des besoins
+                                                (ciblage des étudiants, usagers des transports, clients des marchés) et
+                                                la stratégie de fidélisation via la création d'une carte dédiée.</li>
+                                            <li>Intégrer une dimension bilingue, tant dans l'utilisation de la
+                                                terminologie professionnelle (Food Truck, Followers, POS) que dans la
+                                                réalisation de livrables intégrant l'anglais, comme les interfaces de
+                                                l'application de commande (utilisant des descriptifs tels que "Sweet" ou
+                                                "Fruit filled").</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce projet m'a permis d'expérimenter concrètement la dynamique et les
+                                            exigences du mode projet. L'efficacité de notre groupe a reposé sur une
+                                            excellente répartition des tâches : pendant qu'Ethan étudiait la viabilité
+                                            économique et la concurrence locale, Lucas et Mattéo se chargeaient de la
+                                            déclinaison graphique et de la communication digitale. De mon côté, mon
+                                            travail sur l'analyse des freins et des besoins de la clientèle (recherche
+                                            de rapidité, prix abordables, contraintes météo) a servi de base pour
+                                            orienter nos choix stratégiques globaux. </p>
+                                        <p>J'ai pris conscience que la collaboration ne se limite pas à diviser le
+                                            travail, mais exige une communication constante pour maintenir la cohérence
+                                            du projet. Par exemple, il fallait que la création du flyer (tâche commune)
+                                            respecte parfaitement la charte graphique "rétro/cinéma" pensée par Mattéo
+                                            et l'approche événementielle (dégustations gratuites pour les clients
+                                            déguisés) proposée par Ethan. De plus, naviguer entre des outils en anglais,
+                                            concevoir des interfaces bilingues et rédiger un argumentaire en français
+                                            m'a entraîné à jongler avec les codes de la communication professionnelle
+                                            internationale.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, ce projet valide pleinement l'AC 32.05. J'ai prouvé ma
+                                            capacité à m'intégrer dans une équipe projet, à assumer mes responsabilités
+                                            individuelles tout en contribuant aux livrables collectifs. La production
+                                            d'une identité de marque complète, la gestion des outils numériques et la
+                                            maîtrise du vocabulaire métier en français comme en anglais démontrent mon
+                                            aptitude à collaborer efficacement dans un contexte professionnel moderne et
+                                            pluridisciplinaire.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <h3>Compétence 3 : PROGRAMMER</h3>
+                    <details class="ac-item">
+                        <summary>AC 33.01 : Élaborer les spécifications techniques et le cahier des charges d'une
+                            application informatique</summary>
+                        <div class="project-proof">
+                            <h4>Projet en relation : "Stage"</h4>
+                            <div class="proof-grid">
+                                <div>
+                                    <strong>Sujet :</strong>
+                                    <p>Étude de faisabilité, dimensionnement et élaboration des spécifications
+                                        techniques pour le déploiement d'un "Cloud interne local" (serveur de stockage
+                                        collaboratif) au sein de la PME RIOU SOLUTIONS.</p>
+                                    <strong>Ressources mobilisées :</strong>
+                                    <ul>
+                                        <li>Expression des besoins de la direction (recherche de souveraineté numérique,
+                                            alternative aux abonnements type Google Workspace, accès distant).</li>
+                                        <li>Audit de l'infrastructure de stockage existante (NAS QNAP existant).</li>
+                                        <li>Matrice comparative de solutions logicielles et matérielles (NAS
+                                            propriétaire Synology versus solution Open-Source Nextcloud).</li>
+                                        <li>Catalogues constructeurs pour le dimensionnement matériel (gammes DS925+,
+                                            DS1525+, DS1825+, RS1221+).</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Objectifs :</strong>
+                                    <p>L'objectif de cette mission était de formaliser un cahier des charges rigoureux
+                                        pour guider l'entreprise dans l'acquisition et l'intégration de sa nouvelle
+                                        infrastructure de stockage souveraine.
+                                    </p>
+                                    <p>Les sous-objectifs étaient les suivants :</p>
+                                    <ul>
+                                        <li>Traduire les besoins fonctionnels des collaborateurs (partage de fichiers
+                                            volumineux, télétravail) en contraintes techniques.</li>
+                                        <li>Évaluer les scénarios possibles (solutions clés en main vs auto-hébergement)
+                                            en prenant en compte les aspects financiers, matériels et de Maintien en
+                                            Condition Opérationnelle (MCO).</li>
+                                        <li>Dimensionner l'équipement matériel requis en anticipant la volumétrie et la
+                                            tolérance aux pannes (RAID).</li>
+                                        <li>Rédiger les prérequis de sécurité incontournables (les spécifications
+                                            d'intégration) pour que ce nouvel équipement ne crée pas de faille dans le
+                                            système d'information.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Auto-évaluation et recul :</strong>
+                                    <p>Ce projet d'étude m'a fait comprendre qu'élaborer un cahier des charges ne
+                                        consiste pas à choisir la technologie la plus complexe, mais celle qui
+                                        correspond à la réalité de l'entreprise. Par exemple, la solution open-source
+                                        Nextcloud offrait une flexibilité totale et un coût logiciel nul. Cependant, mon
+                                        analyse a démontré qu'elle imposerait une charge de maintenance (gestion
+                                        Linux/Docker) inadaptée à la PME. Proposer une solution propriétaire type
+                                        Synology s'est avéré être le choix le plus pragmatique et sécurisant pour
+                                        garantir la stabilité.</p>
+                                    <p>De plus, rédiger ces spécifications m'a obligé à penser à l'architecture globale.
+                                        J'ai dû spécifier qu'il était hors de question de recycler l'ancien NAS (dédié
+                                        aux sauvegardes) pour le Cloud, afin de ne pas mélanger production et backup.
+                                        Enfin, la rédaction du volet sécurité du cahier des charges a été cruciale : j'y
+                                        ai imposé des règles strictes de déploiement, comme le placement dans un VLAN
+                                        "Zone de Services", l'obligation d'un tunnel VPN pour l'accès distant, et
+                                        l'activation du 2FA.</p>
+                                </div>
+                                <div>
+                                    <strong>Conclusion :</strong>
+                                    <p>En conclusion, cette mission valide avec succès l'AC 33.01. J'ai prouvé ma
+                                        capacité à partir d'un besoin brut exprimé par une direction, à l'analyser, et à
+                                        le transformer en un cahier des charges technique complet. De la comparaison
+                                        logicielle au dimensionnement du matériel, jusqu'à la définition des règles
+                                        d'intégration réseau et de sécurité, j'ai fourni à l'entreprise un document de
+                                        spécifications solide, prêt à être utilisé pour lancer la phase d'achat et de
+                                        déploiement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 33.02 : Mettre en place un environnement de travail collaboratif</summary>
+                        <div class="project-proof">
+                            <h4>Projet en relation : "Serveur de Virtualisation"</h4>
+                            <div class="proof-grid">
+                                <div>
+                                    <strong>Sujet :</strong>
+                                    <p>Conception, choix et déploiement d'un serveur de virtualisation destiné à
+                                        héberger les infrastructures et les services d'un environnement de travail
+                                        collaboratif. Ce projet a été mené dans le cadre du module S5.01 (Concevoir,
+                                        réaliser et présenter une solution technique).</p>
+                                    <strong>Ressources mobilisées :</strong>
+                                    <ul>
+                                        <li>Étude technique et comparatif détaillé des principales solutions
+                                            d'hypervision du marché.</li>
+                                        <li>Analyse des avantages et inconvénients des écosystèmes VMware, Hyper-V, KVM
+                                            et Proxmox.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Objectifs :</strong>
+                                    <p>L'objectif central de ce projet était de fournir une base technique fiable et
+                                        centralisée, permettant à une équipe de travailler ensemble, de déployer des
+                                        machines virtuelles (VM) à la demande et de partager des ressources de calcul.
+                                    </p>
+                                    <p>Les sous-objectifs techniques et décisionnels incluaient :</p>
+                                    <ul>
+                                        <li>Analyser les différentes architectures d'hyperviseurs pour déterminer la
+                                            solution la plus adaptée à un travail en équipe.</li>
+                                        <li>Évaluer les contraintes budgétaires, les licences (open source vs payant) et
+                                            la compatibilité avec différents systèmes d'exploitation.</li>
+                                        <li>Préparer un environnement garantissant l'administration partagée, la
+                                            sécurité et la sauvegarde des travaux de l'équipe.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Auto-évaluation et recul :</strong>
+                                    <p>Ce projet m'a fait réaliser qu'un environnement de travail collaboratif en
+                                        informatique repose avant tout sur une infrastructure matérielle et logicielle
+                                        solide. La phase d'étude comparative des hyperviseurs a été cruciale pour
+                                        anticiper les besoins de l'équipe.</p>
+                                    <p>Par exemple, j'ai pu identifier que si VMware est reconnu pour ses performances,
+                                        son écosystème complet et son interface intuitive, il présente le désavantage
+                                        d'être payant (ESXi) avec une version gratuite trop bridée en fonctionnalités. À
+                                        l'inverse, une solution comme Hyper-V est facile à prendre en main, permet la
+                                        migration de VM et est 100% gratuite, mais reste malheureusement restreinte à
+                                        l'environnement Windows, limitant la prise en charge des distributions Linux
+                                        souvent nécessaires aux développeurs.</p>
+                                    <p>L'exploration des solutions open source a mis en évidence d'autres compromis. KVM
+                                        offre une gestion solide des performances, mais manque parfois de
+                                        fonctionnalités avancées prêtes à l'emploi pour la production. L'étude de
+                                        Proxmox (basé sur Debian et utilisant KVM) a démontré qu'il constituait une
+                                        excellente plateforme collaborative : il est open source et intègre nativement
+                                        des fonctionnalités critiques comme la gestion du pare-feu et les sauvegardes.
+                                        J'ai cependant noté que son administration collaborative demande un bon niveau
+                                        technique, certaines fonctions complexes nécessitant d'intervenir en ligne de
+                                        commande.</p>
+                                </div>
+                                <div>
+                                    <strong>Conclusion :</strong>
+                                    <p>La conception de ce serveur de virtualisation valide pleinement l'AC 33.02.
+                                        Mettre en place un environnement collaboratif technique exige de concevoir le
+                                        socle d'hébergement (le serveur et son hyperviseur) qui va supporter l'ensemble
+                                        des outils de l'équipe. En comparant rigoureusement les solutions du marché pour
+                                        faire un choix éclairé, j'ai démontré ma capacité à déployer une infrastructure
+                                        permettant à plusieurs collaborateurs d'administrer des systèmes, de partager
+                                        des ressources et de développer des solutions de manière centralisée.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 33.03 : Participer à la formation des utilisateurs</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Accompagnement au changement et assistance aux collaborateurs lors de la
+                                            phase finale de la migration de l'infrastructure de messagerie (de Microsoft
+                                            Exchange vers Zimbra) au sein de l'imprimerie RIOU SOLUTIONS.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Terminaux des utilisateurs, incluant les postes de travail équipés de
+                                                clients lourds (Microsoft Outlook) et les applications mobiles sur
+                                                smartphones.</li>
+                                            <li>Procédures techniques de configuration s'appuyant sur les protocoles
+                                                IMAP/SMTP d'OVHcloud.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de cette intervention était d'accompagner
+                                            individuellement chaque collaborateur pour restaurer son accès à la
+                                            messagerie, suite à la rupture inévitable des liaisons de synchronisation
+                                            (MAPI/ActiveSync) provoquée par le changement d'infrastructure.</p>
+                                        <p>Pour mener à bien cette mission, les sous-objectifs étaient les suivants :
+                                        </p>
+                                        <ul>
+                                            <li>Guider les utilisateurs dans la reconfiguration de leurs outils de
+                                                travail.</li>
+                                            <li>Assister le personnel pour la suppression de l'ancien profil de
+                                                messagerie Exchange, devenu obsolète et générant des erreurs de
+                                                connexion.</li>
+                                            <li>Créer les nouveaux profils pointant vers l'infrastructure Zimbra et
+                                                valider avec l'utilisateur la remontée complète de son historique.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Cette étape de mon stage m'a fait réaliser qu'un projet technique n'est
+                                            jamais réellement terminé tant que les utilisateurs finaux ne sont pas
+                                            opérationnels. Lorsque l'ancienne passerelle s'est mise à rejeter les
+                                            requêtes des adresses nominales, les collaborateurs se sont retrouvés face à
+                                            des messages d'erreur de connexion. Il a donc fallu réagir vite, mais
+                                            surtout avec pédagogie.</p>
+                                        <p>J'ai dû adapter mon discours et mon langage technique pour être compris par
+                                            des collaborateurs dont l'informatique n'est pas le cœur de métier. Par
+                                            exemple, plutôt que de parler de "rupture du protocole ActiveSync",
+                                            j'expliquais simplement comment reconnecter leur téléphone au nouveau
+                                            serveur. Cet exercice a grandement développé mon sens de l'écoute et du
+                                            service client interne. J'ai également pris soin d'effectuer des tests
+                                            croisés d'émission et de réception avec eux pour les rassurer sur le fait
+                                            qu'aucune donnée n'avait été perdue.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, cette mission valide pleinement l'AC 33.03. J'ai prouvé ma
+                                            capacité à ne pas rester cantonné derrière mon écran, mais à aller sur le
+                                            terrain pour former et accompagner les utilisateurs. Cette transition
+                                            méthodique a d'ailleurs permis à RIOU SOLUTIONS de migrer son infrastructure
+                                            de communication de manière transparente et sans aucune rupture d'activité
+                                            notable. J'ai compris que la vulgarisation technique et le support humain
+                                            sont des compétences indispensables pour garantir l'adoption de toute
+                                            nouvelle solution technologique en entreprise.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 33.04 : Déployer et maintenir une solution informatique</summary>
+                        <div class="project-proof">
+                            <h4>Projet en relation : "POC WiFi"</h4>
+                            <div class="proof-grid">
+                                <div>
+                                    <strong>Sujet :</strong>
+                                    <p>Déploiement d'une architecture réseau à travers la réalisation d'un Proof of
+                                        Concept (POC) Wi-Fi d'entreprise. Ce projet s'est déroulé dans le cadre du
+                                        module R5.01 - WiFi Avancé, en simulant une réponse à un appel d'offres pour un
+                                        client soumis à de fortes restrictions budgétaires.</p>
+                                    <strong>Ressources mobilisées :</strong>
+                                    <ul>
+                                        <li>Points d'accès (AP) Cisco Catalyst (modèles 9120AXI-E et 9130AXI-E) et un
+                                            commutateur (switch) PoE.</li>
+                                        <li>Solution d'administration centralisée de type contrôleur Wi-Fi.</li>
+                                        <li>Équipements d'audit radio professionnels comprenant le logiciel Ekahau et
+                                            l'outil Sidekick.</li>
+                                        <li>Interfaces en ligne de commande (CLI) via Minicom pour la configuration
+                                            matérielle. </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Objectifs :</strong>
+                                    <p>L'objectif principal était de concevoir l'architecture technique et de déployer
+                                        un POC fonctionnel démontrant la capacité de la solution à répondre aux besoins
+                                        immédiats du client. </p>
+                                    <p>Les objectifs techniques comprenaient :</p>
+                                    <ul>
+                                        <li>Déployer et configurer une segmentation réseau stricte (VLAN Management,
+                                            IoT, Guest).</li>
+                                        <li>Mettre en œuvre plusieurs SSID aux caractéristiques de sécurité distinctes :
+                                            clé pré-partagée (PSK) pour l'IoT, portail captif local pour les invités, et
+                                            préparation à l'authentification forte (802.1X).</li>
+                                        <li>Évaluer la couverture radio via un site survey pour proposer un
+                                            positionnement optimal des bornes.</li>
+                                        <li>Adapter et maintenir la configuration sur des équipements hétérogènes et de
+                                            générations différentes.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Auto-évaluation et recul :</strong>
+                                    <p>Ce projet m'a confronté de manière très concrète aux défis du déploiement en
+                                        conditions réelles. J'ai pu initier l'architecture en configurant le commutateur
+                                        en ligne de commande, en y déclarant les différents VLANs (10, 20 et 30) et en
+                                        paramétrant le serveur DHCP pour l'adressage des AP.</p>
+                                    <p>Cependant, la phase de déploiement des points d'accès s'est avérée
+                                        particulièrement complexe. Nous avons rencontré d'importants problèmes
+                                        techniques liés à l'AP, qui ont sévèrement ralenti notre progression. Cette
+                                        difficulté technique a finalement été une excellente leçon sur la "maintenance"
+                                        d'une solution : opérer avec du matériel hétérogène impose de savoir
+                                        diagnostiquer des pannes de bas niveau, comme la nécessité de basculer le mode
+                                        de fonctionnement d'un équipement (via la commande ap-type capwap). J'ai compris
+                                        que déployer une solution ne consiste pas seulement à suivre un plan, mais
+                                        surtout à savoir investiguer et adapter son approche face aux blocages matériels
+                                        pour garantir le maintien en condition opérationnelle.</p>
+                                </div>
+                                <div>
+                                    <strong>Conclusion :</strong>
+                                    <p>En conclusion, malgré les obstacles rencontrés lors de l'intégration, ce POC
+                                        Wi-Fi valide concrètement ma maîtrise de l'AC 33.04. De la conception du plan
+                                        d'adressage à la configuration physique des équipements réseau, en passant par
+                                        la planification de l'audit radio, j'ai pu mettre en œuvre les étapes cruciales
+                                        du déploiement d'une infrastructure. Gérer les aléas techniques et chercher des
+                                        solutions de contournement prouve ma capacité à maintenir et à stabiliser une
+                                        solution informatique en environnement de production.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 33.05 : S'informer sur les évolutions et les nouveautés technologiques</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Etude de cas Fibre"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Réalisation d'une veille technologique, stratégique et prospective lors de la
+                                            conception d'un projet de déploiement de fibre optique (concept d'opérateur
+                                            FiberLux) pour la commune de Locon. Ce projet a été mené dans le cadre du
+                                            module R5.06 (Expression, Culture, Communication professionnelles).</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>État de l'art et analyse du marché des télécommunications (limites
+                                                techniques de l'ADSL face aux nouveaux usages).</li>
+                                            <li>Documentation technique sur les standards de déploiement d'une
+                                                architecture FTTH (NRO, SRO, PM, PBO).</li>
+                                            <li>Veille documentaire sur les technologies émergentes liées à la domotique
+                                                et aux concepts de "Smart City" (ou "Smart Village" en zone rurale).
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif de ce projet dépassait la simple étude de faisabilité pour tirer
+                                            des câbles. Il s'agissait de comprendre l'état technologique actuel pour
+                                            anticiper les besoins numériques de demain et concevoir une offre innovante.
+                                        </p>
+                                        <p>Pour répondre aux exigences de cette veille technologique, les sous-objectifs
+                                            étaient les suivants :</p>
+                                        <ul>
+                                            <li>Analyser les stratégies et les faiblesses des opérateurs historiques
+                                                (offres trop standardisées, manque d'adaptation au tissu rural) pour
+                                                identifier des opportunités d'innovation.</li>
+                                            <li>Comprendre les prérequis techniques d'une infrastructure très haut débit
+                                                moderne pour soutenir de nouveaux usages vitaux (télétravail, services
+                                                en ligne).</li>
+                                            <li>Projeter l'évolution de l'infrastructure à long terme en s'informant sur
+                                                les technologies d'avenir capables de transformer la localité en
+                                                "Commune Intelligente".</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce travail m'a fait réaliser que la veille technologique ne consiste pas
+                                            uniquement à s'intéresser au dernier matériel sorti, mais surtout à
+                                            comprendre comment les innovations s'intègrent dans un écosystème global
+                                            pour résoudre des problématiques réelles.</p>
+                                        <p>L'analyse de marché initiale m'a contraint à me documenter sur la transition
+                                            inéluctable des réseaux cuivre vers le FTTH. Cependant, c'est l'élaboration
+                                            de la stratégie "Évolution future" qui a été la plus formatrice. Pour
+                                            proposer des perspectives crédibles, j'ai dû m'informer activement sur
+                                            l'intégration des réseaux d'accès sans fil à grande échelle (Extension
+                                            Wi-Fi), sur les protocoles liés au déploiement de la domotique locale, et
+                                            sur les services connectés dédiés à des cibles spécifiques (comme le soutien
+                                            au maintien à domicile des seniors). J'ai compris qu'une bonne veille permet
+                                            de voir une infrastructure fibre non pas comme une fin en soi, mais comme le
+                                            socle indispensable (le backbone) pour accueillir les nouveautés
+                                            technologiques de demain.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, cette étude de cas valide pleinement l'AC 33.05. J'ai démontré
+                                            ma capacité à analyser les tendances macro-économiques d'un marché
+                                            technologique, à m'informer sur les standards techniques actuels de
+                                            l'industrie (FTTH), et surtout à anticiper l'intégration d'innovations
+                                            futures (IoT, services connectés, domotique urbaine). Cette approche
+                                            proactive garantit ma capacité à concevoir des solutions réseaux qui sont
+                                            non seulement fonctionnelles aujourd'hui, mais également prêtes à évoluer
+                                            avec les technologies de demain.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 33.06 : Sécuriser l'environnement numérique d'une application</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Conception de l'architecture de sécurité et durcissement de l'environnement
+                                            numérique en vue du déploiement d'une nouvelle application de "Cloud
+                                            interne" (NAS) au sein du système d'information de la PME RIOU SOLUTIONS.
+                                        </p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Audit des règles de filtrage du pare-feu périmétrique (règles n°7 et
+                                                n°8).</li>
+                                            <li>Analyse de la topologie réseau existante et conception d'une
+                                                segmentation en VLANs. </li>
+                                            <li>Cahier des charges des préconisations de durcissement applicatif et
+                                                réseau pour la future solution de stockage Synology.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal était de garantir que l'intégration de cette nouvelle
+                                            application collaborative (le Cloud interne) ne crée aucune brèche dans le
+                                            système d'information de l'entreprise, en sécurisant son environnement de
+                                            bout en bout.
+                                        </p>
+                                        <p>Pour y parvenir, les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Isoler l'application au niveau réseau pour limiter sa surface
+                                                d'exposition (cloisonnement).</li>
+                                            <li>Restreindre et chiffrer les accès externes à l'application pour les
+                                                collaborateurs en télétravail.</li>
+                                            <li>Appliquer des mesures de durcissement directement sur les protocoles du
+                                                service logiciel pour bloquer les vecteurs d'attaques courants.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce projet m'a fait réaliser que la sécurisation d'une application ne repose
+                                            pas uniquement sur le logiciel lui-même, mais sur tout l'écosystème qui
+                                            l'entoure. J'ai d'abord abordé le problème au niveau réseau : pour éviter
+                                            qu'un logiciel malveillant ne se propage, j'ai préconisé de placer le futur
+                                            NAS Cloud dans un VLAN dédié (une "DMZ Interne" ou "Zone de Services"), le
+                                            séparant de manière stricte du réseau d'administration et des utilisateurs
+                                            standards. L'audit du pare-feu m'a permis d'appuyer cette décision en
+                                            corrigeant la règle globale n°8, bloquant ainsi les communications directes
+                                            de poste à poste et limitant les mouvements latéraux.</p>
+                                        <p>Ensuite, je me suis concentré sur la couche accès et applicative. Pour
+                                            sécuriser l'environnement du NAS, j'ai formellement interdit l'ouverture
+                                            directe de ports vers Internet, imposant la création d'un tunnel VPN
+                                            (OpenVPN ou WireGuard) chiffré de bout en bout pour tout accès distant. J'ai
+                                            finalisé la sécurisation en rédigeant des règles de durcissement applicatif
+                                            : désactivation des protocoles non sécurisés comme SMBv1, obligation
+                                            d'utiliser HTTPS/TLS avec un certificat valide, et activation de la double
+                                            authentification (2FA) pour tous les comptes utilisateurs. </p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>L'élaboration de cette stratégie de sécurisation valide pleinement l'AC
+                                            33.06. J'ai démontré ma capacité à prendre en charge une application
+                                            critique, à analyser son exposition, et à concevoir un environnement
+                                            numérique étanche. De la configuration des ACLs sur le pare-feu au
+                                            déploiement de VLANs, jusqu'au durcissement des protocoles applicatifs et à
+                                            la gestion des identités (2FA), j'ai prouvé ma maîtrise des concepts de
+                                            défense en profondeur pour protéger efficacement les données de l'entreprise
+                                            face aux menaces cyber.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <h3>Compétence 4 : SÉCURISER</h3>
+                    <details class="ac-item">
+                        <summary>AC 34.01 Cyber : Participer activement à une analyse de risque pour définir une
+                            politique de sécurité pour une petite structure</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Réalisation d'une analyse de risques complète et définition d'une politique
+                                            de sécurité adaptée pour l'entreprise RIOU SOLUTIONS, une PME d'une
+                                            vingtaine de collaborateurs, lors de mon stage de fin d'études.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Démarche d'audit hybride : inspection de la sécurité physique des locaux
+                                                et analyse logique de l'infrastructure réseau.</li>
+                                            <li>Logiciel de capture de trames Wireshark pour l'étude des flux internes.
+                                            </li>
+                                            <li>Interfaces d'administration et table de routage du pare-feu
+                                                périmétrique.</li>
+                                            <li>Élaboration d'une Matrice des Risques synthétique.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de cette mission était d'évaluer la résilience du
+                                            système d'information de cette petite structure face aux menaces actuelles,
+                                            pour ensuite poser les bases d'une véritable politique de sécurité interne.
+                                        </p>
+                                        <p>Pour y parvenir, les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Identifier exhaustivement les vulnérabilités existantes, tant sur le
+                                                plan physique (accès aux serveurs) que logique (architecture
+                                                d'adressage, règles de pare-feu).</li>
+                                            <li>Qualifier et prioriser ces vulnérabilités en analysant la cause racine
+                                                et l'impact métier potentiel (ex: propagation de ransomware, vol de
+                                                données).</li>
+                                            <li>Formuler des recommandations correctives claires et applicables pour
+                                                durcir l'infrastructure, constituant ainsi la nouvelle politique de
+                                                sécurité de l'entreprise.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Mener cette analyse de risque de bout en bout a été une étape décisive dans
+                                            ma formation. J'ai pris conscience que dans une petite structure, la
+                                            sécurité ne passe pas toujours par des outils complexes, mais d'abord par la
+                                            maîtrise des fondamentaux. Par exemple, constater que des baies de brassage
+                                            n'étaient pas verrouillées ou qu'aucune authentification réseau n'était
+                                            requise pour se connecter au réseau interne (absence de 802.1X) m'a prouvé
+                                            que le risque d'intrusion physique ou de Shadow IT était bien réel et
+                                            intolérable.</p>
+                                        <p>L'étape la plus formatrice a été la création de la matrice des risques. Cet
+                                            outil m'a forcé à prendre du recul : il ne s'agissait plus seulement de
+                                            lister des failles techniques (comme la règle n°7 du pare-feu qui était trop
+                                            permissive en sortie) , mais de traduire ces failles en impacts majeurs pour
+                                            le système d'information (communication libre pour un malware vers un
+                                            serveur C2). C'est cette priorisation qui m'a permis de proposer à la
+                                            direction une politique de sécurité concrète et échelonnée : durcissement
+                                            immédiat du pare-feu , puis déploiement progressif de VLANs et d'une
+                                            authentification centralisée.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, ce stage m'a permis de valider pleinement l'AC 34.01. J'ai
+                                            prouvé ma capacité à diagnostiquer l'état de sécurité d'une PME , à
+                                            modéliser les menaces à travers une analyse de risque rigoureuse, et à
+                                            transformer ces constats en un plan d'action stratégique. Ce travail d'audit
+                                            et de conseil a posé les jalons technologiques nécessaires pour garantir la
+                                            souveraineté et la protection des données de l'entreprise sur le long terme.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 34.02 Cyber : Mettre en œuvre des outils avancés de sécurisation d'une
+                            infrastructure du réseau</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "WiFi avancé"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Mise en place d'un portail captif via pfSense (TP N°1). Ce projet a été
+                                            réalisé dans le cadre du module R5.01 WiFi avancé afin d'ajouter une couche
+                                            d'authentification à l'utilisation des ressources d'un réseau.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <p>L'infrastructure s'est appuyée sur un environnement virtualisé complet
+                                            comprenant :</p>
+                                        <ul>
+                                            <li>Une machine virtuelle pfSense configurée avec deux cartes réseaux (une
+                                                interface WAN et une interface LAN).</li>
+                                            <li>Un serveur Windows.</li>
+                                            <li>Une machine virtuelle dédiée à l'administration pour configurer le
+                                                portail.</li>
+                                            <li>Une machine cliente permettant de tester le portail.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de ce projet était de mettre en place un portail captif
+                                            capable de bloquer les accès réseau non autorisés et de rediriger les
+                                            utilisateurs vers une page d'authentification Web. </p>
+                                        <p>Pour y parvenir, plusieurs sous-objectifs techniques ont été fixés :</p>
+                                        <ul>
+                                            <li>Configurer les éléments de base de pfSense via le portail
+                                                d'administration.</li>
+                                            <li>Créer des utilisateurs locaux dans un premier temps, ajouter le service
+                                                de portail captif, et effectuer des tests d'accès avec le client.</li>
+                                            <li>Faire évoluer l'architecture en modifiant la configuration du portail
+                                                pour que l'authentification prenne en compte les utilisateurs déclarés
+                                                sur le Windows Server. </li>
+                                            <li>Personnaliser la page d'accueil du portail captif pour soigner
+                                                l'expérience utilisateur.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>La réalisation de ce TP m'a permis de valider concrètement l'AC 34.02 en
+                                            déployant une solution de sécurité périmétrique avancée. J'ai pu configurer
+                                            le cloisonnement du réseau en gérant les interfaces WAN et LAN, ce qui
+                                            constitue la base d'une infrastructure sécurisée.</p>
+                                        <p>L'une des étapes les plus formatrices a été la transition entre
+                                            l'authentification locale sur pfSense et l'authentification centralisée. En
+                                            effet, vérifier le bon fonctionnement avec des utilisateurs locaux avant de
+                                            basculer sur les comptes du Windows Server m'a permis de comprendre
+                                            l'importance d'une gestion des identités évolutive et robuste en milieu
+                                            professionnel. Le test d'intrusion (ou de connexion) depuis la machine
+                                            cliente a confirmé la fiabilité de la barrière de sécurité mise en place par
+                                            le portail.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, ce projet pfSense a été une excellente opportunité d'appliquer
+                                            des concepts théoriques de cybersécurité à une infrastructure réseau
+                                            réaliste. Le déploiement du portail captif, son interfaçage avec un annuaire
+                                            centralisé (Windows Server) et la validation fonctionnelle démontrent ma
+                                            capacité à mettre en œuvre des outils avancés pour contrôler et sécuriser
+                                            les accès au sein d'un système d'information.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 34.03 Cyber : Sécuriser les systèmes d'exploitation</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "SentinelOne"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Sécurisation et analyse du comportement d'un système d'exploitation via la
+                                            solution EDR SentinelOne, exploité lors du Capture The Flag (CTF) "ThreatOps
+                                            EDR SOC - Jurassic Park (SOC)". Ce projet a été mené dans le cadre du module
+                                            universitaire R5.Cyber.11 - Supervision de la sécurité.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Agent SentinelOne déployé sur les terminaux (Endpoint) pour la collecte
+                                                de télémétrie au niveau de l'OS.</li>
+                                            <li>Console d'administration centrale, en particulier le menu de gestion
+                                                "🚨Alerts".</li>
+                                            <li>Documentation et logs d'exécution des processus pour l'investigation
+                                                (recherche de métadonnées telles que le "Magic Word").</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de ce projet était de comprendre et de mettre en
+                                            pratique la protection dynamique des systèmes d'exploitation modernes, qui
+                                            ne se limite plus aux antivirus traditionnels mais nécessite une analyse
+                                            comportementale approfondie.</p>
+                                        <p>Les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>Appréhender la manière dont un agent EDR interagit avec le système
+                                                d'exploitation (surveillance de l'arbre des processus, des modifications
+                                                de fichiers et des connexions réseau).</li>
+                                            <li>Recenser et traiter les détections remontées par les agents déployés sur
+                                                le parc (identification de 6 alertes actives).</li>
+                                            <li>Auditer la chaîne d'infection d'un malware sur l'OS pour en extraire des
+                                                indicateurs techniques précis (ex: "Magic Word").</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>La participation à ce CTF m'a permis de saisir concrètement les enjeux de la
+                                            sécurisation au niveau de l'OS. Contrairement à une simple analyse réseau,
+                                            travailler avec SentinelOne plonge directement dans les entrailles du
+                                            système. Dès le début du scénario, la navigation dans l'onglet "🚨Alerts"
+                                            pour identifier précisément le nombre de menaces (6 alertes au total) m'a
+                                            appris à interpréter les signaux de compromission remontés par l'OS.</p>
+                                        <p>L'étape la plus révélatrice a été l'investigation menant à la découverte du
+                                            "Magic Word". Cette recherche m'a obligé à disséquer l'activité d'un
+                                            processus malveillant, à analyser les lignes de commande exécutées et à
+                                            comprendre comment une menace tente de s'ancrer dans le système
+                                            d'exploitation. Cela m'a démontré que sécuriser un OS ne consiste pas
+                                            seulement à bloquer un fichier, mais à surveiller en permanence le
+                                            comportement des processus en cours d'exécution pour détecter les anomalies
+                                            complexes.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, l'exploitation de l'EDR SentinelOne m'a permis de valider l'AC
+                                            34.03 avec succès. J'ai pu observer et analyser comment sécuriser activement
+                                            un système d'exploitation face à des menaces avancées. La maîtrise de ces
+                                            outils de supervision de type Endpoint est une compétence cruciale, car le
+                                            système d'exploitation constitue l'ultime ligne de défense où s'exécutent
+                                            les attaques informatiques.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 34.04 Cyber : Proposer une architecture sécurisée de système d'information pour une
+                            petite structure</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Proposition d'une refonte architecturale sécurisée du système d'information
+                                            de l'imprimerie RIOU SOLUTIONS, une PME d'une vingtaine de collaborateurs, à
+                                            l'issue d'un audit de sécurité complet. Ce projet incluait également la
+                                            conception d'une architecture pour le déploiement d'un Cloud interne local.
+                                        </p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Cartographie réseau révélant des défauts de conception, comme
+                                                l'utilisation non conforme d'adresses IP publiques (192.9.100.0/24) en
+                                                interne.</li>
+                                            <li>Analyse des règles de routage et de pare-feu existantes.</li>
+                                            <li>Étude comparative de solutions matérielles et logicielles pour le
+                                                stockage (écosystème propriétaire Synology vs serveur auto-hébergé
+                                                Nextcloud).</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de cette mission était d'accompagner l'entreprise dans
+                                            la modernisation de son infrastructure en lui proposant une architecture
+                                            réseau résiliente, sécurisée et adaptée à ses contraintes budgétaires et
+                                            humaines.</p>
+                                        <p>Pour cela, les sous-objectifs étaient :</p>
+                                        <ul>
+                                            <li>Repenser la topologie globale pour passer d'un réseau "plat" et
+                                                vulnérable à une infrastructure segmentée et contrôlée.</li>
+                                            <li>Proposer un plan d'adressage conforme aux standards (RFC 1918).</li>
+                                            <li>Concevoir l'intégration sécurisée d'un nouvel équipement de stockage
+                                                (NAS) pour héberger les données collaboratives tout en sanctuarisant les
+                                                sauvegardes existantes. </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce stage m'a appris qu'une bonne architecture de sécurité doit impérativement
+                                            concilier les bonnes pratiques techniques et la réalité de l'entreprise.
+                                            Face à l'absence de cloisonnement et à l'interconnexion totale des
+                                            sous-réseaux, j'ai proposé une nouvelle architecture basée sur des réseaux
+                                            locaux virtuels (VLAN) afin d'isoler de manière stricte le réseau
+                                            d'administration, les serveurs de production et les utilisateurs.</p>
+                                        <p>L'étude d'opportunité pour le déploiement d'un Cloud interne a été l'exercice
+                                            le plus formateur. D'un point de vue architectural, j'ai compris qu'il était
+                                            critique de ne pas faire cohabiter les sauvegardes et les données de
+                                            production exposées sur le même équipement physique. J'ai donc recommandé
+                                            l'acquisition d'un NAS Synology dédié, plutôt qu'une solution open-source
+                                            Nextcloud, pour garantir un maintien en condition opérationnelle (MCO)
+                                            réaliste pour la PME. Surtout, j'ai assorti cette proposition de prérequis
+                                            architecturaux stricts : placement du NAS dans une DMZ interne (VLAN Zone de
+                                            Services), obligation d'un accès distant chiffré via un tunnel VPN
+                                            (OpenVPN/WireGuard), et activation de la double authentification.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>La réalisation de ce projet valide pleinement l'AC 34.04. J'ai prouvé ma
+                                            capacité à concevoir et à proposer une architecture de système d'information
+                                            complète, depuis la refonte du plan d'adressage et le déploiement de VLANs
+                                            jusqu'à l'intégration sécurisée de nouveaux services de stockage. L'ensemble
+                                            de mes propositions a permis de fournir à la PME une feuille de route claire
+                                            et budgétisée pour moderniser et durcir son infrastructure face aux menaces
+                                            actuelles, garantissant ainsi sa souveraineté numérique.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <h3>Compétence 5 : SURVEILLER</h3>
+                    <details class="ac-item">
+                        <summary>AC 35.01 Cyber : Surveiller l'activité du système d'information</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "SentinelOne"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Participation à un Capture The Flag (CTF) centré sur l'utilisation de la
+                                            solution SentinelOne. Ce projet a été réalisé dans le cadre du module
+                                            R5.Cyber.11 - Supervision de la sécurité. Le scénario d'investigation traité
+                                            s'intitulait "ThreatOps EDR SOC - Jurassic Park (SOC)".</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Plateforme Endpoint Detection and Response (EDR) SentinelOne.</li>
+                                            <li>Console d'administration et de supervision (interface SOC).</li>
+                                            <li>Tableaux de bord et journaux d'événements de la plateforme.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de ce projet était de se familiariser avec la
+                                            surveillance en temps réel d'un système d'information via un outil EDR
+                                            professionnel, en simulant le rôle d'un analyste SOC.</p>
+                                        <p>Pour valider ce module de supervision, les sous-objectifs techniques
+                                            comprenaient :</p>
+                                        <ul>
+                                            <li>Appréhender l'interface d'investigation d'une solution EDR leader sur le
+                                                marché.</li>
+                                            <li>Identifier, trier et analyser les alertes de sécurité remontées par les
+                                                agents (par exemple, identifier le nombre précis d'alertes en cours ).
+                                            </li>
+                                            <li>Savoir extraire des informations techniques critiques (comme le "Magic
+                                                Word") pour qualifier un incident et valider les différents Flags.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>La réalisation de ce CTF a été une excellente opportunité pour valider
+                                            concrètement l'AC 35.01. Se retrouver plongé dans un environnement SOC
+                                            simulé m'a permis de comprendre l'importance de la centralisation des logs
+                                            et de la clarté d'une interface de supervision.</p>
+                                        <p>Dès la recherche du premier Flag, qui consistait à naviguer dans le menu
+                                            "🚨Alerts" pour y recenser les 6 alertes actives, j'ai pu expérimenter la
+                                            phase de triage. Cela m'a appris qu'une bonne supervision ne consiste pas
+                                            simplement à observer des données brutes, mais à savoir filtrer le bruit
+                                            pour se concentrer sur les menaces réelles. La poursuite des investigations,
+                                            notamment pour le second Flag, a renforcé ma capacité à traquer des
+                                            indicateurs de compromission spécifiques dans un volume de données
+                                            important.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, ce projet autour de SentinelOne a solidifié ma compréhension
+                                            de la supervision de sécurité. Naviguer dans une interface EDR pour auditer
+                                            et surveiller l'activité d'un parc informatique m'a donné une vision très
+                                            concrète de la réponse à incident. Ce module m'a permis de transformer mes
+                                            connaissances théoriques en compétences pratiques directement applicables en
+                                            entreprise pour surveiller et défendre un système d'information.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 35.02 Cyber : Appliquer une méthodologie de tests de pénétration</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "Stage"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Réalisation d'un audit de sécurité hybride (physique et logique) apparenté à
+                                            un test d'intrusion interne lors de mon stage de fin d'études au sein de
+                                            l'imprimerie RIOU SOLUTIONS.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Un ordinateur personnel (tiers) utilisé pour simuler l'introduction d'un
+                                                équipement compromis ou malveillant et tester l'approche "Shadow IT".
+                                            </li>
+                                            <li>Le logiciel d'analyse de trafic réseau Wireshark pour l'écoute et la
+                                                capture de trames.</li>
+                                            <li>L'accès aux équipements de l'infrastructure physique (baies de brassage,
+                                                locaux techniques) et aux interfaces du pare-feu périmétrique.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal était d'évaluer concrètement la résilience du système
+                                            d'information de l'entreprise face aux menaces (internes et externes) en
+                                            appliquant une démarche d'audit structurée.</p>
+                                        <p>Pour y parvenir, il a fallu :</p>
+                                        <ul>
+                                            <li>Tester l'étanchéité des premières lignes de défense réseau en situation
+                                                réelle.</li>
+                                            <li>Identifier et qualifier les vulnérabilités de configuration logicielle
+                                                et de sécurité physique.</li>
+                                            <li>Élaborer une matrice des risques pour synthétiser les failles et
+                                                prioriser les actions de remédiation à soumettre à la direction.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Mener cette mission en conditions réelles a été extrêmement formateur. J'ai
+                                            rapidement compris qu'un test de pénétration ne se limite pas à lancer des
+                                            exploits complexes ; cela commence souvent par éprouver les bases. Par
+                                            exemple, lors de mes tests de sécurité logique, j'ai pu obtenir un accès
+                                            total aux ressources de l'entreprise simplement en branchant mon PC
+                                            personnel sur une prise murale RJ45, mettant ainsi en lumière l'absence
+                                            critique de protocoles d'authentification comme le 802.1X.</p>
+                                        <p>L'analyse de trafic via Wireshark et l'étude des règles du pare-feu m'ont
+                                            également permis de découvrir des vulnérabilités importantes, telles que
+                                            l'utilisation aberrante d'adresses IP publiques (le sous-réseau
+                                            192.9.100.0/24 appartenant à Oracle) en plein cœur du réseau local, ou
+                                            encore un filtrage sortant totalement permissif (règle n°7) qui aurait
+                                            laissé le champ libre à n'importe quel ransomware pour communiquer avec un
+                                            serveur C2. Construire la matrice des risques m'a forcé à prendre du recul
+                                            en ne listant pas juste des failles techniques, mais en les qualifiant avec
+                                            un niveau de sévérité (de modérée à intolérable) pour évaluer leur impact
+                                            business.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>Ce stage m'a permis de valider pleinement l'AC 35.02. J'ai été capable
+                                            d'appliquer une méthodologie de test et d'audit de bout en bout, de
+                                            l'inspection physique (baies serveurs non verrouillées) jusqu'à l'analyse
+                                            logique (défaut de cloisonnement réseau), pour enfin proposer des
+                                            remédiations applicables (segmentation VLAN, restrictions Egress).
+                                            Confronter la théorie à un environnement de production en entreprise m'a
+                                            prouvé que l'adoption d'une posture offensive est indispensable pour auditer
+                                            et sécuriser efficacement une infrastructure informatique.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 35.03 Cyber : Réagir face à un incident de sécurité</summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "SentinelOne"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Réponse à incident et investigation numérique sur la plateforme EDR
+                                            SentinelOne , réalisés à travers le scénario de Capture The Flag intitulé
+                                            "ThreatOps EDR SOC - Jurassic Park (SOC)". Ce projet s'inscrit dans le
+                                            module académique R5.Cyber.11 - Supervision de la sécurité.</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Console d'administration de la solution Endpoint Detection and Response
+                                                (EDR) SentinelOne.</li>
+                                            <li>Interface d'investigation SOC et journalisation des événements.</li>
+                                            <li>Tableau de bord des détections, notamment le menu de gestion des alertes
+                                                "🚨Alerts".</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif central de cette mise en situation était de dépasser le stade de
+                                            la simple surveillance pour entrer dans une phase active de réaction face à
+                                            une compromission avérée sur un système d'information.</p>
+                                        <p>Les sous-objectifs techniques de l'investigation comprenaient :</p>
+                                        <ul>
+                                            <li>L'identification initiale de la surface d'attaque en recensant avec
+                                                précision les menaces actives (découverte de 6 alertes critiques).</li>
+                                            <li>L'analyse approfondie de la chaîne d'exécution (Kill Chain) d'une
+                                                attaque en cours.</li>
+                                            <li>L'extraction d'informations techniques et d'indicateurs de compromission
+                                                spécifiques (tels que la recherche du "Magic Word" du malware) pour
+                                                qualifier précisément la nature de l'incident.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Cette épreuve de CTF m'a permis de comprendre concrètement la pression et la
+                                            méthodologie requises lors d'une réponse à incident dans un environnement
+                                            SOC. Le premier défi, qui consistait à naviguer efficacement dans le menu
+                                            des alertes pour isoler les 6 menaces actives, m'a appris que la rapidité de
+                                            qualification est primordiale pour endiguer une attaque.</p>
+                                        <p>La suite de l'exercice, axée sur la recherche du "Magic Word", m'a forcé à
+                                            plonger dans l'analyse comportementale des processus. J'ai pris conscience
+                                            qu'un outil EDR comme SentinelOne est surpuissant, mais qu'il nécessite un
+                                            analyste capable de croiser les journaux, de comprendre la finalité d'un
+                                            script malveillant et de prendre des décisions de remédiation rapides (comme
+                                            l'isolement réseau d'une machine ou l'arrêt d'un processus). Cela a
+                                            transformé ma vision de la sécurité : on ne subit plus l'attaque, on la
+                                            dissèque pour la neutraliser.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, ce projet pratique sur SentinelOne m'a permis de valider avec
+                                            succès l'AC 35.03. J'ai pu démontrer ma capacité à réagir de manière
+                                            méthodique face à des alertes de sécurité dans un contexte d'entreprise
+                                            simulé. Comprendre comment diagnostiquer une alerte, extraire des marqueurs
+                                            de compromission et utiliser les capacités de réponse d'un EDR moderne
+                                            constituent des compétences fondamentales que je suis désormais prêt à
+                                            appliquer en milieu professionnel.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="ac-item">
+                        <summary>AC 35.04 Cyber : Administrer les outils de surveillance du système d'information
+                        </summary>
+                        <div class="ac-content">
+                            <div class="project-proof">
+                                <h4>Projet en relation : "SentinelOne"</h4>
+                                <div class="proof-grid">
+                                    <div>
+                                        <strong>Sujet :</strong>
+                                        <p>Prise en main, navigation et administration de la plateforme EDR SentinelOne
+                                            lors du Capture The Flag (CTF) "ThreatOps EDR SOC - Jurassic Park (SOC)". Ce
+                                            projet a été réalisé dans le cadre du module académique R5.Cyber.11
+                                            (Supervision de la sécurité).</p>
+                                        <strong>Ressources mobilisées :</strong>
+                                        <ul>
+                                            <li>Console de gestion et d'administration centrale de SentinelOne.</li>
+                                            <li>Menus de configuration et de requêtage (notamment le panneau latéral et
+                                                l'onglet "🚨Alerts" ).</li>
+                                            <li>Base de données télémétriques et journaux d'événements bruts remontés
+                                                par les agents EDR.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Objectifs :</strong>
+                                        <p>L'objectif principal de cette mise en situation était de démontrer ma
+                                            capacité à administrer techniquement et à exploiter efficacement l'interface
+                                            d'une solution de sécurité industrielle de pointe.</p>
+                                        <p>Pour valider cet aspect, les sous-objectifs étaient les suivants :</p>
+                                        <ul>
+                                            <li>S'approprier l'ergonomie, l'arborescence et la logique de fonctionnement
+                                                de la console d'administration.</li>
+                                            <li>Savoir localiser, extraire et gérer les flux d'informations critiques
+                                                centralisés par l'outil.</li>
+                                            <li>Maîtriser l'interface pour auditer les détections et identifier des
+                                                éléments précis au sein du système (comme le comptage exact d'alertes ou
+                                                la recherche d'indicateurs cachés de type "Magic Word" ).</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <strong>Auto-évaluation et recul :</strong>
+                                        <p>Ce module m'a fait réaliser qu'administrer un outil de surveillance de cette
+                                            envergure exige bien plus que de simplement regarder des graphiques ; cela
+                                            demande une excellente compréhension de l'architecture logicielle de la
+                                            solution.</p>
+                                        <p>Lors de la recherche du premier Flag, j'ai dû identifier rapidement où la
+                                            plateforme centralisait les incidents en naviguant spécifiquement dans
+                                            l'onglet "🚨Alerts" situé sur la gauche de l'interface, ce qui m'a permis
+                                            d'isoler et de comptabiliser les 6 alertes actives du système. Ensuite,
+                                            l'investigation visant à trouver le fameux "Magic Word" m'a poussé à creuser
+                                            plus profondément dans les menus de la console et à exploiter les logs
+                                            détaillés. Cela m'a prouvé que l'administration d'un outil de type EDR/SIEM
+                                            implique de maîtriser ses capacités d'exploration, de comprendre comment les
+                                            données sont indexées et de savoir extraire la donnée brute nécessaire au
+                                            paramétrage ou à l'audit du système de défense.</p>
+                                    </div>
+                                    <div>
+                                        <strong>Conclusion :</strong>
+                                        <p>En conclusion, l'exploitation technique de SentinelOne durant ce CTF m'a
+                                            permis de valider l'AC 35.04 de manière très concrète. J'ai prouvé ma
+                                            capacité à administrer un outil de supervision complexe, à naviguer avec
+                                            aisance dans ses interfaces de gestion et à en exploiter les fonctionnalités
+                                            avancées pour extraire des données stratégiques. Savoir administrer ce type
+                                            d'environnement est une compétence indispensable pour assurer le bon
+                                            fonctionnement et l'optimisation continue des outils de défense au sein
+                                            d'une équipe technique ou d'un SOC.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
-    </main>
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-cta">
-                <p class="cta-text">Besoin de me contacter ?</p>
-                <a href="mailto:julian.allary12@gmail.com" class="big-email">julian.allary12@gmail.com</a>
+        <section id="projets" class="section-padding dark-bg hidden-on-load">
+            <div class="container">
+                <h2>Projets Personnels</h2>
+                <div class="grid-3">
+                    <div class="card project-card scale-hover">
+                        <h3>Portfolio v1</h3>
+                        <p>Premier essai de portfolio réalisé l'année dernière. M'a permis de comprendre les bases du
+                            HTML/CSS.</p>
+                    </div>
+                    <div class="card project-card scale-hover">
+                        <h3>Bot Discord</h3>
+                        <p>Bot développé en Node.js pour gérer un serveur étudiant. Intégration d'API externes.</p>
+                    </div>
+                    <div class="card project-card scale-hover">
+                        <h3>Jeu 2D Unity</h3>
+                        <p>Petit projet Game Jam pour le plaisir de découvrir le C# et la physique des jeux.</p>
+                    </div>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <div class="copyright">
-                    © 2025 Julian Allary. Tous droits réservés. <br>
-                    <a href="./mentions-legales/" style="font-size: 0.85rem; opacity: 0.7;">Mentions Légales</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/julian-allary-7a59172b0/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/Julian-Allary" target="_blank">GitHub</a>
-                </div>
+        </section>
+
+        <section id="cv" class="section-padding hidden-on-load">
+            <div class="container text-center">
+                <h2>Mon CV & Contact</h2>
+                <p>Découvrez mon parcours académique et professionnel en détail.</p>
+                <br>
+                <a href="chemin/vers/ton-cv.pdf" target="_blank" class="btn btn-outline scale-hover">Télécharger mon CV
+                    (PDF)</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding dark-bg hidden-on-load">
+            <div class="container text-center">
+                <h2>Prêt à collaborer ?</h2>
+                <p>Je suis à la recherche d'un stage / d'une alternance pour mon futur Mastère.</p>
+                <br>
+                <a href="mailto:ton.email@email.com" class="btn pulse-hover">Me contacter</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container text-center">
+                <p>&copy; 2026 Julian Allary. Tous droits réservés.</p>
+                <p><a href="#" id="mentions-link">Mentions Légales</a></p>
+            </div>
+        </footer>
+
+        <div id="modal-mentions" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Mentions Légales</h2>
+                <p><strong>Éditeur du site :</strong> Julian Allary<br>
+                    <strong>Contact :</strong> julian.allary12@gmail.com
+                </p>
+                <br>
+                <p><strong>Hébergement :</strong> Ce site est hébergé par GitHub</p>
+                <br>
+                <p><strong>Propriété intellectuelle :</strong> Le contenu de ce site (textes, images, code)
+                    m'appartient,
+                    sauf mention contraire.</p>
             </div>
         </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
